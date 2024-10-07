@@ -51,23 +51,23 @@ Currently BottomSheet is only available through the [Swift Package Manager](http
 5. Optionally receive the current panel position with a callback, change the background color, show a drag indicator or limit the background interaction based on the height;
 ```
 .sheetPlus(
-  isPresented: $isPresented,
-  background: (
-      Color(UIColor.secondarySystemBackground)
-  ),
-  onDrag: { translation in
-      print(translation)
-  },
-  header: { EmptyView() },
-  main: {
-      EmptyView()
-          .presentationDetentsPlus(
-              [.height(244), .fraction(0.4), .medium, .large],
-              selection: $selectedDetent
-          )
-          .presentationDragIndicatorPlus(.visible)
-          .presentationBackgroundInteractionPlus(.enabled(upThrough: .height(380)))
-  }
+    isPresented: $isPresented,
+    background: (
+        Color(UIColor.secondarySystemBackground)
+    ),
+    onDrag: { translation in
+        print(translation)
+    },
+    header: { EmptyView() },
+    main: {
+        EmptyView()
+            .presentationDetentsPlus(
+                [.height(244), .fraction(0.4), .medium, .large],
+                selection: $selectedDetent
+            )
+            .presentationDragIndicatorPlus(.visible)
+            .presentationBackgroundInteractionPlus(.enabled(upThrough: .height(380)))
+    }
 )
 ```
 
